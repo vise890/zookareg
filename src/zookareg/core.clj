@@ -48,6 +48,7 @@
                (reset! state/system (ig/init config))
                (reset! state/config config)
                (catch clojure.lang.ExceptionInfo ex
+                 ;; NOTE tear down partially initialised system
                  (ig/halt! (:system (ex-data ex)))
                  (throw (.getCause ex)))))))
 
