@@ -1,12 +1,9 @@
 (ns zookareg.core
-  (:require [clojure.java.io :as io]
-            [clojure.pprint :as pprint]
+  (:require [clojure.pprint :as pprint]
             [clojure.tools.logging :as log]
             [integrant.core :as ig]
-            [me.raynes.fs :as fs]
             [zookareg.state :as state]
-            [zookareg.utils :as ut])
-  (:import java.net.ServerSocket))
+            [zookareg.utils :as ut]))
 
 (def default-ports
   {:kafka           9999
