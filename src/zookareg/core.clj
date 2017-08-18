@@ -18,8 +18,6 @@
    :zookeeper       zookeeper
    :schema-registry schema-registry})
 
-
-
 (defn ->available-ports []
   (->ports (ut/->available-port)
            (ut/->available-port)
