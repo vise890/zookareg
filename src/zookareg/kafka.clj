@@ -23,7 +23,10 @@
    "log.dir"                     (.getAbsolutePath (fs/temp-dir "kafka-log"))})
 
 (defn ->broker [ports]
-  (KafkaServerStartable. (KafkaConfig. (ut/m->properties (->kafka-config ports)))))
+  (let [config (KafkaConfig. (ut/m->properties (->kafka-config ports)))
+        server (KafkaServerStartable. config)]
+    (.startup server)
+    server))
 
 (defn shutdown [b]
   (when b

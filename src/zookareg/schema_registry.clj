@@ -1,6 +1,7 @@
 (ns zookareg.schema-registry
   (:require [integrant.core :as ig]
             [me.raynes.fs :as fs]
+            [zookareg.core :as core]
             [zookareg.utils :as ut])
   (:import [io.confluent.kafka.schemaregistry.rest SchemaRegistryConfig SchemaRegistryRestApplication]))
 
@@ -27,6 +28,8 @@
     (.start server)
     server))
 
+(def server ())
+
 (defn halt! [server]
   (when server
     (.stop server)))
@@ -37,3 +40,13 @@
 (defmethod ig/halt-key! ::schema-registry [_ server]
   (halt! server))
 
+
+(comment
+
+  (->config core/ports)
+
+  (println (slurp (->config-file core/ports)))
+
+  (def sr (->schema-registry core/ports))
+
+  )

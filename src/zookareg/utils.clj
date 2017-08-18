@@ -1,4 +1,5 @@
 (ns zookareg.utils
+  (:require [clojure.walk :as walk])
   (:import java.io.FileOutputStream
            java.net.ServerSocket
            java.util.Properties))
@@ -20,3 +21,7 @@
             out
             "Genereated by zookareg"))
   (.getAbsolutePath file))
+
+(defn disqualify-keys [m]
+  (walk/postwalk #(if (keyword? %) (keyword (name %)) %)
+                 m))

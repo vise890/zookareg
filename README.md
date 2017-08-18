@@ -1,16 +1,32 @@
 # zookareg
 
-Embedded `zo`okeeper `ka`fka and Confluent's Schema `reg`istry
+Embedded `Zo`okeeper `Ka`fka and Confluent's Schema `Reg`istry.
 
 ## Usage
 
 ```clojure
 (require 'zookareg.core)
 
+;; Start an embedded System with default ports:
+;; zk: 2181 k: 9999 sreg: 8081
 (init-zookareg)
 
+;; another call will halt the previous system:
+(init-zookareg)
+
+;; Specify ports:
+(init-zookareg {:kafka           1234
+                :zookeeper       2222
+                :schema-registry 8080})
+
+;; Random-ish available ports:
+(init-zookareg (->available-ports))
+
+;; When you're done:
 (halt-zookareg!)
 ```
+
+Happy testing!
 
 ## License
 
