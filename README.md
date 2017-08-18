@@ -4,6 +4,13 @@ Embedded `Zo`okeeper `Ka`fka and Confluent's Schema `Reg`istry.
 
 ## Usage
 
+[![Clojars Project](https://img.shields.io/clojars/v/vise890/zookareg.svg)](https://clojars.org/vise890/zookareg)
+
+```clojure
+;; in project.clj
+[vise890/zookareg "0.1.0"]
+```
+
 ```clojure
 (require 'zookareg.core)
 
