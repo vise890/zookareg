@@ -7,7 +7,7 @@
   :repositories {"confluent" "http://packages.confluent.io/maven"}
 
   :dependencies [[org.clojure/clojure "1.9.0-alpha17"]
-                 [integrant "0.5.0"]
+                 [integrant "0.6.0"]
 
                  [org.clojure/tools.logging "0.4.0"]
                  [org.clojure/tools.namespace "0.2.11"]
