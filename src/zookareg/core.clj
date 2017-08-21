@@ -60,6 +60,9 @@
   ;;;
   (init-zookareg)
 
+  (with-zookareg
+    (fn [_ _] (println "hi")))
+
   (def ports (-> @zookareg.state/config
                  ut/disqualify-keys
                  :kafka
