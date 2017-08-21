@@ -6,7 +6,7 @@
             [zookareg.utils :as ut]))
 
 (def default-ports
-  {:kafka           9999
+  {:kafka           9092
    :zookeeper       2181
    :schema-registry 8081})
 
