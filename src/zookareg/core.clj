@@ -47,6 +47,15 @@
                  (ig/halt! (:system (ex-data ex)))
                  (throw (.getCause ex)))))))
 
+(defn with-zookareg
+  "Executes f within the context of an embedded zookareg. f will be passed 2 args: config and system"
+  [f]
+  (try
+    (init-zookareg)
+    (f @state/config @state/system)
+    (finally
+      (halt-zookareg!))))
+
 (comment
   ;;;
   (init-zookareg)
