@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="Leiningen: com.thoughtworks.paranamer/paranamer:2.7">
-    <CLASSES>
-      <root url="jar://$MAVEN_REPOSITORY$/com/thoughtworks/paranamer/paranamer/2.7/paranamer-2.7.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

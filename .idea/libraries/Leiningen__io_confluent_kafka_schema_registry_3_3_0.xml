@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="Leiningen: io.confluent/kafka-schema-registry:3.3.0">
-    <CLASSES>
-      <root url="jar://$MAVEN_REPOSITORY$/io/confluent/kafka-schema-registry/3.3.0/kafka-schema-registry-3.3.0.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

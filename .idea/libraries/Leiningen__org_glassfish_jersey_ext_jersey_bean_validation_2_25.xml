@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="Leiningen: org.glassfish.jersey.ext/jersey-bean-validation:2.25">
-    <CLASSES>
-      <root url="jar://$MAVEN_REPOSITORY$/org/glassfish/jersey/ext/jersey-bean-validation/2.25/jersey-bean-validation-2.25.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

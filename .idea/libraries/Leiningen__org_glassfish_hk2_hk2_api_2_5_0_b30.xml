@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="Leiningen: org.glassfish.hk2/hk2-api:2.5.0-b30">
-    <CLASSES>
-      <root url="jar://$MAVEN_REPOSITORY$/org/glassfish/hk2/hk2-api/2.5.0-b30/hk2-api-2.5.0-b30.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
