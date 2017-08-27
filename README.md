@@ -22,9 +22,9 @@ Embedded `Zo`okeeper `Ka`fka and Confluent's Schema `Reg`istry.
 (init-zookareg)
 
 ;; Specify ports:
-(init-zookareg {:kafka           1234
-                :zookeeper       2222
-                :schema-registry 8080})
+(init-zookareg {:ports {:kafka           9092
+                        :zookeeper       2181
+                        :schema-registry 8081}})
 
 ;; Random-ish available ports:
 (init-zookareg (->available-ports))
