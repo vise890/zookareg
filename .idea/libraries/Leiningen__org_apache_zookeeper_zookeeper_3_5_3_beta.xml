@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Leiningen: org.apache.zookeeper/zookeeper:3.5.3-beta">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/zookeeper/zookeeper/3.5.3-beta/zookeeper-3.5.3-beta.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
