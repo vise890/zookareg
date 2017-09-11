@@ -58,6 +58,15 @@
     (finally
       (halt-zookareg!))))
 
+(defn with-zookareg-test-fixture
+  "Executes f within the context of an embedded zookareg. To be used as a `clojure.test` fixture"
+  [f]
+  (try
+    (init-zookareg)
+    (f)
+    (finally
+      (halt-zookareg!))))
+
 (comment
   ;;;
   (init-zookareg {:ports {:kafka           9092
