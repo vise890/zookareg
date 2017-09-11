@@ -8,10 +8,12 @@ Embedded `Zo`okeeper `Ka`fka and Confluent's Schema `Reg`istry.
 
 ```clojure
 ;; in project.clj
+
 [vise890/zookareg "0.2.2"]
 ```
 
 ```clojure
+;;; Development:
 (require 'zookareg.core)
 
 ;; Start an embedded System with default ports:
@@ -31,6 +33,16 @@ Embedded `Zo`okeeper `Ka`fka and Confluent's Schema `Reg`istry.
 
 ;; When you're done:
 (halt-zookareg!)
+
+;;; Testing:
+;;; NOTE: these will halt running zookareg instances
+
+(clojure.test/use-fixtures :once with-zookareg-test-fixture)
+
+;; if you want to have access to the config / running integrant system:
+(with-zookareg
+  (fn [config system]
+    ,,,))
 ```
 
 Happy testing!
