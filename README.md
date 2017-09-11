@@ -17,7 +17,7 @@ Embedded `Zo`okeeper `Ka`fka and Confluent's Schema `Reg`istry.
 (require 'zookareg.core)
 
 ;; Start an embedded System with default ports:
-;; zk: 2181 k: 9999 sreg: 8081
+;; zk: 2181 k: 9092 sreg: 8081
 (init-zookareg)
 
 ;; another call will halt the previous system:
