@@ -49,23 +49,21 @@
                           (ig/halt! (:system (ex-data ex)))
                           (throw (.getCause ex)))))))
 
-(defn with-zookareg
-  "Executes f within the context of an embedded zookareg. f will be passed 2 args: config and system"
-  [f]
-  (try
-    (init-zookareg)
-    (f @state/config @state/system)
-    (finally
-      (halt-zookareg!))))
+(defmacro with-zookareg
+  "Starts up zookareg with the specified configuration; executes the body then shuts down."
+  [config & body]
+  `(try
+     (init-zookareg ~config)
+     ~@body
+     (finally
+       (halt-zookareg!))))
 
 (defn with-zookareg-test-fixture
-  "Executes f within the context of an embedded zookareg. To be used as a `clojure.test` fixture"
-  [f]
-  (try
-    (init-zookareg)
-    (f)
-    (finally
-      (halt-zookareg!))))
+  "Starts up zookareg with the specified configuration; executes the function then shuts down."
+  ([config f]
+   (with-zookareg config (f)))
+  ([f]
+   (with-zookareg default-config (f))))
 
 (comment
   ;;;
@@ -74,8 +72,10 @@
                           :schema-registry 8081}})
   (init-zookareg (->available-ports))
   (halt-zookareg!)
-  (with-zookareg
-    (fn [_ _] (println "hi")))
+  (with-zookareg default-config
+    (println "hi"))
+
+  (with-zookareg-around #(println "hi"))
 
   (def ports (-> @zookareg.state/config
                  ut/disqualify-keys

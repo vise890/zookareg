@@ -39,17 +39,25 @@ Embedded `Zo`okeeper `Ka`fka and Confluent's Schema `Reg`istry.
 
 (clojure.test/use-fixtures :once with-zookareg-test-fixture)
 
-;; if you want to have access to the config / running integrant system:
-(with-zookareg
-  (fn [config system]
-    ,,,))
+;;; or, for more fine-grained control
+(def zookareg-config (merge default-config {:ports {:kafka 8888}}))
+ 
+(defn around-all
+  [f]
+  (with-zookareg-test-fixture zookareg-config f))
+
+(clojure.test/use-fixtures :once around-all)
+
+;;; You can also wrap ad-hoc code in zookareg init/halt:
+(with-zookareg default-config
+	... do something ...)
 ```
 
 Happy testing!
 
 ## License
 
-Copyright © 2017 Martino Visintin
+Copyright © 2017 Martino Visintin & Contributors
 
 Distributed under the Eclipse Public License either version 1.0 or (at
 your option) any later version.
