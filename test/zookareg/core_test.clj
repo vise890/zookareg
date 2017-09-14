@@ -56,6 +56,9 @@
   (sut/with-zookareg sut/default-config
     (state-matches? sut/default-config))
 
+  (is (thrown? AssertionError
+               (sut/with-zookareg :foo)))
+
   (testing "with specified config"
     (let [config= (sut/->available-ports-config)]
       (sut/with-zookareg config=

@@ -64,6 +64,7 @@
 (defn with-zookareg-fn
   "Starts up zookareg with the specified configuration; executes the function then shuts down."
   ([config f]
+   {:pre [(map? config) (fn? f)]}
    (try
      (init-zookareg config)
      (f)
