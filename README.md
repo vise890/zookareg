@@ -1,6 +1,6 @@
 # zookareg
 
-Embedded *Zo*okeeper *Ka*fka and Confluent's Schema *Reg*istry.
+Embedded **Zo**okeeper **Ka**fka and Confluent's Schema **Reg**istry.
 
 ## Usage
 
