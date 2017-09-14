@@ -1,4 +1,4 @@
-(defproject vise890/zookareg "0.5.5"
+(defproject vise890/zookareg "0.5.6"
   :description "Embedded `Zo`okeeper `Ka`fka and Confluent's Schema `Reg`istry"
   :url "http://github.com/vise890/zookareg"
   :license {:name "Eclipse Public License"
