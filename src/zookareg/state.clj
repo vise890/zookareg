@@ -3,6 +3,4 @@
 
 (repl/disable-reload!)
 
-(def config (atom nil))
-
-(def system (atom nil))
+(def state (atom nil))

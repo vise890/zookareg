@@ -57,7 +57,7 @@ Embedded **Zo**okeeper **Ka**fka and Confluent's Schema **Reg**istry.
                         :schema-registry 8081}})
 
 ;; Random-ish available ports:
-(init-zookareg (->available-ports))
+(init-zookareg (->available-ports-config))
 ```
 
 Happy testing!
