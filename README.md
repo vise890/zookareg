@@ -15,8 +15,8 @@ Embedded **Zo**okeeper **Ka**fka and Confluent's Schema **Reg**istry.
 ```clojure
 (require 'zookareg.core)
 
-;; Start an embedded System with default ports:
-;; zk: 2181 k: 9092 sreg: 8081
+;; Start an embedded system with default ports:
+;; zookeeper: 2181; kafka: 9092; schema registry: 8081
 (init-zookareg)
 
 ;; another call will halt the previous system:
@@ -45,7 +45,7 @@ Embedded **Zo**okeeper **Ka**fka and Confluent's Schema **Reg**istry.
 
 ;;; You can also wrap ad-hoc code in zookareg init/halt:
 (with-zookareg default-config
-	,,, do something ,,,)
+	,,, :do-something ,,,)
 ```
 
 ### Other Goodies
