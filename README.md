@@ -5,15 +5,14 @@ Embedded **Zo**okeeper **Ka**fka and Confluent's Schema **Reg**istry.
 ## Usage
 
 [![Clojars Project](https://img.shields.io/clojars/v/vise890/zookareg.svg)](https://clojars.org/vise890/zookareg)
-
 ```clojure
 ;; in project.clj
-
 [vise890/zookareg "0.4.5"]
 ```
 
+### Development:
+
 ```clojure
-;;; Development:
 (require 'zookareg.core)
 
 ;; Start an embedded System with default ports:
@@ -28,9 +27,10 @@ Embedded **Zo**okeeper **Ka**fka and Confluent's Schema **Reg**istry.
 ```
 
 ### Testing:
+
 **NOTE**: these will halt running zookareg instances
 
-```
+```clojure
 (require 'clojure.test)
 
 (use-fixtures :once with-zookareg-fn)
@@ -50,7 +50,7 @@ Embedded **Zo**okeeper **Ka**fka and Confluent's Schema **Reg**istry.
 
 ### Other Goodies
 
-```
+```clojure
 ;; Specify ports:
 (init-zookareg {:ports {:kafka           9092
                         :zookeeper       2181
