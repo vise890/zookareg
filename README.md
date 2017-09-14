@@ -9,7 +9,7 @@ Embedded `Zo`okeeper `Ka`fka and Confluent's Schema `Reg`istry.
 ```clojure
 ;; in project.clj
 
-[vise890/zookareg "0.2.2"]
+[vise890/zookareg "0.3.5"]
 ```
 
 ```clojure
@@ -23,6 +23,34 @@ Embedded `Zo`okeeper `Ka`fka and Confluent's Schema `Reg`istry.
 ;; another call will halt the previous system:
 (init-zookareg)
 
+;; When you're done:
+(halt-zookareg!)
+```
+
+### Testing:
+**NOTE**: these will halt running zookareg instances
+
+```
+(require 'clojure.test)
+
+(use-fixtures :once with-zookareg-fn)
+
+(defn around-all
+  [f]
+  (with-zookareg-fn (merge default-config
+                           {:ports {:kafka 8888}})
+                    f))
+
+(use-fixtures :once around-all)
+
+;;; You can also wrap ad-hoc code in zookareg init/halt:
+(with-zookareg default-config
+	,,, do something ,,,)
+```
+
+### Other Goodies
+
+```
 ;; Specify ports:
 (init-zookareg {:ports {:kafka           9092
                         :zookeeper       2181
@@ -30,27 +58,6 @@ Embedded `Zo`okeeper `Ka`fka and Confluent's Schema `Reg`istry.
 
 ;; Random-ish available ports:
 (init-zookareg (->available-ports))
-
-;; When you're done:
-(halt-zookareg!)
-
-;;; Testing:
-;;; NOTE: these will halt running zookareg instances
-
-(clojure.test/use-fixtures :once with-zookareg-test-fixture)
-
-;;; or, for more fine-grained control
-(def zookareg-config (merge default-config {:ports {:kafka 8888}}))
- 
-(defn around-all
-  [f]
-  (with-zookareg-test-fixture zookareg-config f))
-
-(clojure.test/use-fixtures :once around-all)
-
-;;; You can also wrap ad-hoc code in zookareg init/halt:
-(with-zookareg default-config
-	... do something ...)
 ```
 
 Happy testing!
