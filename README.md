@@ -9,7 +9,7 @@ Embedded **Zo**okeeper **Ka**fka and Confluent's Schema **Reg**istry.
 ```clojure
 ;; in project.clj
 
-[vise890/zookareg "0.3.5"]
+[vise890/zookareg "0.4.5"]
 ```
 
 ```clojure
