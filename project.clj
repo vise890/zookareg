@@ -7,7 +7,7 @@
   :repositories {"confluent" "http://packages.confluent.io/maven"}
 
 
-  :dependencies [[org.clojure/clojure "1.9.0-alpha17"]
+  :dependencies [[org.clojure/clojure "1.9.0-beta1"]
                  [integrant "0.6.1"]
 
                  [org.clojure/tools.logging "0.4.0"]
@@ -17,7 +17,7 @@
                  [io.confluent/kafka-schema-registry "3.3.0"
                   :exclusions [org.apache.kafka/kafka-clients
                                org.apache.kafka/kafka_2.11]]
-                 [org.apache.kafka/kafka_2.11 "0.10.2.1"
+                 [org.apache.kafka/kafka_2.11 "0.11.0.1"
                   :exclusions [org.apache.zookeeper/zookeeper]]
                  [org.apache.curator/curator-test "4.0.0"]]
 
