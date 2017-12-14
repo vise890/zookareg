@@ -4,11 +4,10 @@
   :license {:name "Eclipse Public License"
             :url  "http://www.eclipse.org/legal/epl-v10.html"}
 
-  :repositories {"confluent" "http://packages.confluent.io/maven"}
+  :repositories {"confluent" "https://packages.confluent.io/maven"}
 
-
-  :dependencies [[org.clojure/clojure "1.9.0-beta1"]
-                 [integrant "0.6.1"]
+  :dependencies [[org.clojure/clojure "1.9.0"]
+                 [integrant "0.6.2"]
 
                  [org.clojure/tools.logging "0.4.0"]
                  [org.clojure/tools.namespace "0.2.11"]
